@@ -87,7 +87,7 @@ public MRESReturn Detour_CKickIssue__ExecuteCommand(Address pThis)
     char banReason[256] = {};
     sm_votekick_ban_reason.GetString(banReason, sizeof(banReason));
 
-    // sourcebans
+    // sourcebans check
     if (GetFeatureStatus(FeatureType_Native, "SBPP_BanPlayer") != FeatureStatus_Available)
     {
         char command[1024] = {};
@@ -109,7 +109,11 @@ public MRESReturn Detour_CKickIssue__ExecuteCommand(Address pThis)
         }
 
         SBPP_BanPlayer(0 /* console */, client, banLength, banReason);
-        LogMessage("-> [CKickIssue__ExecuteCommand] Did ban with SBPP_BanPlayer %i %i (%L) %i %s\n", 0, client, client, banLength, banReason);
+        LogMessage
+        (
+            "-> [CKickIssue__ExecuteCommand] Did ban with SBPP_BanPlayer %i %i (%L) %i %s\n",
+            0, client, client, banLength, banReason
+        );
     }
 
     return MRES_Supercede;
