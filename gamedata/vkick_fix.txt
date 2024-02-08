@@ -1,0 +1,59 @@
+"Games"
+{
+    "tf"
+    {
+        "Functions"
+        {
+
+            "CKickIssue::ExecuteCommand"
+            {
+                "signature"     "CKickIssue::ExecuteCommand"
+                "callconv"      "thiscall"
+                "return"        "void"
+                "this"          "address"
+                //"arguments"
+                //{
+                //    "netpacket_t"
+                //    {
+                //        "type"      "objectptr"
+                //    }
+                //    "bool"
+                //    {
+                //        "type"      "bool"
+                //    }
+                //}
+            }
+        }
+
+        "Signatures"
+        {
+            // void thiscall CKickIssue::ExecuteCommand()
+            // =================================================
+            // Signature for _ZN10CKickIssue14ExecuteCommandEv:
+            // Mask:              xxxxxxxxxxxxx
+            // Bytes:             55 8B EC 81 EC 0C 01 00 00 56 57 8B F1
+            // Byte String:       \x55\x8B\xEC\x81\xEC\x0C\x01\x00\x00\x56\x57\x8B\xF1
+            // SourceMod          \x55\x8B\xEC\x81\xEC\x0C\x01\x00\x00\x56\x57\x8B\xF1
+            "CKickIssue::ExecuteCommand"
+            {
+                "library"   "server"
+                "linux"     "not yet"
+                "windows"   "\x55\x8B\xEC\x81\xEC\x0C\x01\x00\x00\x56\x57\x8B\xF1"
+            }
+        
+            // ; char *__thiscall sub_103082C0(_DWORD *this)
+            // ==================================================
+            // Signature for sub_103082C0:
+            // Mask:              x????xxxxxx
+            // Bytes:             A1 B4 47 A5 10 8B D1 56 6B F0 25
+            // Wildcarded Bytes:  A1 ? ? ? ? 8B D1 56 6B F0 25
+            // Byte String:       \xA1\xB4\x47\xA5\x10\x8B\xD1\x56\x6B\xF0\x25
+            // SourceMod          \xA1\x2A\x2A\x2A\x2A\x8B\xD1\x56\x6B\xF0\x25
+            "RenderSteamID"
+            {
+                "library"   "server"
+                "windows"   "\xA1\x2A\x2A\x2A\x2A\x8B\xD1\x56\x6B\xF0\x25"
+            }
+        }
+    }
+}
