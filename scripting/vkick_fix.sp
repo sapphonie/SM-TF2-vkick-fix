@@ -124,8 +124,12 @@ int FindClientBySteamId(const char[] auth, AuthIdType type)
 {
     char tempAuth[MAX_AUTHID_LENGTH];
     
-    for (int i = 1; i <= MaxClients; ++i)
+    for (int i = 1; i <= MaxClients; i++)
     {
+        if (!IsClientInGame(i))
+        {
+            continue;
+        }
         if (!GetClientAuthId(i, type, tempAuth, sizeof(tempAuth)))
         {
             continue;
