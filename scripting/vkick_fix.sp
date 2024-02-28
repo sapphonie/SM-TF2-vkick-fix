@@ -99,7 +99,7 @@ public MRESReturn Detour_CKickIssue__ExecuteCommand(Address pThis)
     }
     else
     {
-        int client = FindClientBySteamId(steamid, AuthId_Steam2);
+        int client = FindClientBySteamId(steamid, AuthId_Steam3);
 
         if ( client <= 0 || !IsClientConnected(client) || !IsClientInGame(client) || !IsClientAuthorized(client) || !IsClientInGame(client) )
         {
