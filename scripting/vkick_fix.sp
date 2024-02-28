@@ -101,7 +101,7 @@ public MRESReturn Detour_CKickIssue__ExecuteCommand(Address pThis)
     {
         int client = FindClientBySteamId(steamid, AuthId_Steam2);
 
-        if ( !client || !IsClientConnected(client) || !IsClientInGame(client) || !IsClientAuthorized(client) || !IsClientInGame(client) )
+        if ( client <= 0 || !IsClientConnected(client) || !IsClientInGame(client) || !IsClientAuthorized(client) || !IsClientInGame(client) )
         {
             LogError("Client %i (%L) is invalid! Can't use SourceBans to ban them...", client, client);
             // BAIL!!!!!
@@ -140,5 +140,5 @@ int FindClientBySteamId(const char[] auth, AuthIdType type)
         }
     }
 
-    return 0;
+    return -1;
 }
